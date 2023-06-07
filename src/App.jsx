@@ -1,17 +1,35 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from 'react';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About';
+import Products from './Products';
+import NotFound from './NotFound';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <section>
-        <h1>E-Commerce</h1>
-      </section>
-    </>
+    <Router>
+      <Navbar />
+
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+
+        <Route path='/about' component={About}>
+          <About />
+        </Route>
+
+        <Route path='/Products'>
+          <Products />
+        </Route>
+
+        <Route path='*'>
+          <NotFound></NotFound>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
