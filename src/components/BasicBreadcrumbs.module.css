@@ -1,5 +1,5 @@
 .Breadcrumbs{
-    font-size: 2rem;
+    font-size: 2rem !important;
     background-color: #decbc0;
     padding: 1rem;
 }

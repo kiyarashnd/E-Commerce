@@ -166,7 +166,7 @@ nav {
 }
 .links a {
   color: var(--clr-grey-3);
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   display: block;
@@ -229,4 +229,32 @@ nav {
   .social-icons a:hover {
     color: var(--clr-primary-7);
   }
+}
+
+.myLink {
+  padding: 10px;
+  display: flex;
+}
+
+.numberOfTour {
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 40%;
+  background-color: #ab7a5f;;
+  width: 20px;
+  height: 20px;
+
+  text-align: center;
+  transform: translateX(-5px);
+}
+
+.mySvg {
+  color: #102a42;
+  font-size: 2rem;
+}
+
+.text{
+  color: #102a42;
+  font-size: 1.5rem;
+  margin-right: 5px;
 }

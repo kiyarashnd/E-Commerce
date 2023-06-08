@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { social } from './data';
+import { FaShoppingCart } from 'react-icons/fa';
+import { AiOutlineLogin } from 'react-icons/ai';
 
 import { Link } from 'react-router-dom';
 
@@ -8,6 +10,8 @@ const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
+
+  const [cartTours, setCartTours] = useState(0);
 
   let count = useRef(0); //this line is read just in initial render
   console.log(count);
@@ -60,14 +64,24 @@ const Navbar = () => {
         </div>
         {/* )} */}
         <ul className='social-icons'>
-          {social.map((socialIcon) => {
+          {/* {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
             return (
               <li key={id}>
                 <a href={url}>{icon}</a>
               </li>
             );
-          })}
+          })} */}
+          <Link to='/Cart' className='myLink' title='shopping-cart'>
+            <p className='text'>Cart</p>
+            <FaShoppingCart className='mySvg' />
+            <span className='numberOfTour'>{cartTours}</span>
+          </Link>
+
+          <Link to='/Login' className='myLink' title='Login'>
+            <p className='text'>Login</p>
+            <AiOutlineLogin className='mySvg' />
+          </Link>
         </ul>
       </div>
     </nav>

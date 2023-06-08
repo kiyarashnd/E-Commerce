@@ -4,6 +4,8 @@ import Home from './Home';
 import About from './About';
 import Products from './Products';
 import NotFound from './NotFound';
+import Cart from './Cart';
+import Login from './Login';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -23,6 +25,14 @@ function App() {
 
         <Route path='/Products'>
           <Products />
+        </Route>
+
+        <Route path='/Cart'>
+          {/* <Cart cartTours={cartTours} setCartTorus={setCartTorus}></Cart> */}
+          <Cart></Cart>
+        </Route>
+        <Route path='/Login'>
+          <Login></Login>
         </Route>
 
         <Route path='*'>

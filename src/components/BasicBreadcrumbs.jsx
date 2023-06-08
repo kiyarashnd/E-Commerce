@@ -6,7 +6,7 @@ import styles from './BasicBreadcrumbs.module.css';
 
 export default function BasicBreadcrumbs() {
   return (
-    <Breadcrumbs aria-label='breadcrumb' className={styles.Breadcrumbs}>
+    <Breadcrumbs className={styles.Breadcrumbs}>
       <Link underline='hover' color='inherit' href='/'>
         Home
       </Link>
