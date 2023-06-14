@@ -150,8 +150,8 @@ nav {
   padding: 1rem;
 }
 .nav-toggle {
-  font-size: 1.5rem;
-  color: var(--clr-primary-5);
+  font-size: 2.5rem;
+  color: #ab7a5f;
   background: transparent;
   border-color: transparent;
   transition: var(--transition);
@@ -175,7 +175,8 @@ nav {
 }
 .links a:hover {
   background: var(--clr-primary-8);
-  color: var(--clr-primary-5);
+  color: #c5a491;
+  transform: scale(1.1);
   padding-left: 1.5rem;
 }
 .social-icons {
@@ -189,14 +190,13 @@ nav {
 .show-container {
   height: 10rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
   }
   .nav-header {
     padding: 0;

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { social } from './data';
 import { FaShoppingCart } from 'react-icons/fa';
 import { AiOutlineLogin } from 'react-icons/ai';
 
