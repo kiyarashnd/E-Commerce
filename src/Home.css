@@ -104,4 +104,22 @@ p{
     max-width: 45em;
     margin-bottom: 2rem;
     color: var(--clr-grey-5);
-   }
+}
+
+.underline{
+    background: #ab7a5f;
+    height: 0.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6rem;
+}
+
+.slider-container h2{
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+}
+
+.slider-container{
+    background-color:white;
+}

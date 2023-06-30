@@ -1,5 +1,11 @@
+import BreadCrumbs from './components/BasicBreadcrumbs';
+
 const About = () => {
-  return <h2>About component</h2>;
+  return (
+    <>
+      <BreadCrumbs />
+    </>
+  );
 };
 
 export default About;

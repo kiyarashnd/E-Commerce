@@ -19,7 +19,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path='/about' component={About}>
+        <Route path='/about'>
           <About />
         </Route>
 
