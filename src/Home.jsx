@@ -18,9 +18,9 @@ const Home = () => {
           </Link>
         </div>
         <div className={myStyles.container2}>
-          <img src='img2.jpeg' alt='Image 2' />
+          <img className={myStyles.myImg} src='img2.jpeg' alt='Image 2' />
           {/* <img src='image3.jpg' alt='Image 3' /> */}
-          <img src='img1.jpeg' alt='Image 1' />
+          <img className={myStyles.myImg} src='img1.jpeg' alt='Image 1' />
         </div>
       </section>
       <section className={myStyles['slider-container']}>
