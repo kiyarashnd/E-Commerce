@@ -2,4 +2,12 @@
     font-size: 2rem !important;
     background-color: #decbc0;
     padding: 1rem;
+    padding-left: 6.3rem;
+}
+
+.Breadcrumbs2{
+    font-size: 2rem !important;
+    background-color: #decbc0;
+    padding: 1rem;
+    padding-left: 0;
 }

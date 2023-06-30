@@ -55,7 +55,7 @@ const Navbar = () => {
               return ( */}
             {/* <a href={url}>{text}</a> */}
             <Link to='/'>Home</Link>
-            <Link to='/about'>about</Link>
+            <Link to='/About'>About</Link>
             <Link to='/Products'>Products</Link>
             {/* );
             })} */}

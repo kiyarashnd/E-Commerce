@@ -34,7 +34,7 @@ export default function BasicBreadcrumbs() {
       >
         Products
       </Link> */}
-      <Typography color='text.primary' className={styles.Breadcrumbs}>
+      <Typography color='text.primary' className={styles.Breadcrumbs2}>
         {lastURL}
       </Typography>
     </Breadcrumbs>

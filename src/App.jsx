@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-import About from './About';
+import About from './components/About';
 import Products from './Products';
 import NotFound from './NotFound';
 import Cart from './Cart';
@@ -19,7 +19,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path='/about'>
+        <Route path='/About'>
           <About />
         </Route>
 
