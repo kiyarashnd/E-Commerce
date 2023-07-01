@@ -1,5 +1,6 @@
 import myStyles from './Home.module.css';
 import { Link } from 'react-router-dom';
+import { products } from './data';
 
 const Home = () => {
   return (
@@ -26,6 +27,54 @@ const Home = () => {
       <section className={myStyles['slider-container']}>
         <h2 className={myStyles.heading2}>Featured Products</h2>
         <div className={myStyles.underline}></div>
+        <div className={myStyles['flex-container']}>
+          <Link
+            to={`/Products/${products[0].id}`}
+            className={myStyles.product3}
+          >
+            <img
+              src={products[0].img}
+              alt={products[0].name}
+              className={myStyles.myImage}
+            />
+            <div className={myStyles['inner-flex']}>
+              <h5 className={myStyles.name}>{products[0].name}</h5>
+              <p className={myStyles.price}>${products[0].price}</p>
+            </div>
+          </Link>
+          <Link
+            to={`/Products/${products[1].id}`}
+            className={myStyles.product3}
+          >
+            <img
+              src={products[1].img}
+              alt={products[1].name}
+              className={myStyles.myImage}
+            />
+            <div className={myStyles['inner-flex']}>
+              <h5 className={myStyles.name}>{products[1].name}</h5>
+              <p className={myStyles.price}>${products[1].price}</p>
+            </div>
+          </Link>
+          <Link
+            to={`/Products/${products[2].id}`}
+            className={myStyles.product3}
+          >
+            <img
+              src={products[2].img}
+              alt={products[2].name}
+              className={myStyles.myImage}
+            />
+            <div className={myStyles['inner-flex']}>
+              <h5 className={myStyles.name}>{products[2].name}</h5>
+              <p className={myStyles.price}>${products[2].price}</p>
+            </div>
+          </Link>
+        </div>
+
+        <Link to='/Products' className={myStyles.btn2}>
+          ALL PRODUCTS
+        </Link>
       </section>
     </>
   );

@@ -1,0 +1,109 @@
+.main-class{
+    /* display: flex;
+    gap: 2rem;
+    margin-top: 4rem; */
+    display: grid;
+    gap: 4rem;
+    margin-top: 2rem;
+
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.myImg{
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+    height: 500px;
+    margin-left: 2rem;
+
+    margin-top: -2rem;
+}
+
+.head{
+    line-height: 1;
+    font-size: 2.5rem;
+}
+
+.price{
+    color: #ab7a5f;
+    font-size: 1.5rem;
+}
+
+.desc{
+    line-height: 2;
+    max-width: 35rem;
+}
+
+.line{
+    border-top: 1px solid #bcccdc;
+
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+.btn2{
+    background: #ab7a5f;
+    border-color: transparent;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    color: #eaded7;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    width: 12rem;
+    text-transform: uppercase;
+    transition: all .3s linear;
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+   }
+
+.btn2:hover {
+    background: #c5a491;
+    color: #453227;
+}
+
+.setCart{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.mybtn {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 5px;
+
+    align-items: flex-start;
+  }
+
+.mybtn:hover{
+    transform: scale(1.3);
+}
+
+.num{
+    color: #102a42;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+@media screen and (max-width: 950px) {
+    .main-class{
+        display: flex;
+        flex-direction: column;
+    }
+    .myImg{
+        width: 90%;
+        justify-content: center;
+    }
+}

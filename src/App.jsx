@@ -6,6 +6,7 @@ import Products from './Products';
 import NotFound from './NotFound';
 import Cart from './Cart';
 import Login from './Login';
+import Pro from './Pro';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -23,7 +24,7 @@ function App() {
           <About />
         </Route>
 
-        <Route path='/Products'>
+        <Route exact path='/Products'>
           <Products />
         </Route>
 
@@ -31,8 +32,13 @@ function App() {
           {/* <Cart cartTours={cartTours} setCartTorus={setCartTorus}></Cart> */}
           <Cart></Cart>
         </Route>
+
         <Route path='/Login'>
           <Login></Login>
+        </Route>
+
+        <Route path='/Products/:id'>
+          <Pro></Pro>
         </Route>
 
         <Route path='*'>

@@ -82,6 +82,8 @@ display: none;
     width: 10rem;
     text-transform: uppercase;
     transition: all .3s linear;
+
+    text-align: center;
    }
 
 .btn:hover {
@@ -118,4 +120,68 @@ display: none;
 
 .slider-container{
     background-color:white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.flex-container{
+    display: flex;
+    gap: 2rem;
+    width: 95vw;
+    margin: 0 auto;
+    max-width: 1170px;
+
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 950px) {
+    .flex-container{
+        flex-direction: column;
+    }
+}
+
+.inner-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.myImage{
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    /* transition: var(--transition); */
+}
+
+.btn2{
+    background: #ab7a5f;
+    border-color: transparent;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    color: #eaded7;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    width: 12rem;
+    text-transform: uppercase;
+    transition: all .3s linear;
+
+    margin-left: 40%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+   }
+
+.btn2:hover {
+    background: #c5a491;
+    color: #453227;
+}
+
+.name{
+    color: #102a42;
+    font-size: 1rem;
+}
+
+.price{
+    color:  #ab7a5f;
+    letter-spacing: var(--spacing);
 }

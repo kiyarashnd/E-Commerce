@@ -50,3 +50,36 @@ export const social = [
     icon: <FaBehance />,
   },
 ];
+
+export const products = [
+  {
+    id: 1,
+    name: 'Armchair',
+    price: 125.99,
+    description:
+      'Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge',
+    Available: 'In Stock',
+    Brand: 'Marcos',
+    img: './images/img1.jpeg',
+  },
+  {
+    id: 2,
+    name: 'Suede Armchair',
+    price: 159.99,
+    description:
+      'Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge',
+    Available: 'In Stock',
+    Brand: 'Caressa',
+    img: './images/img2.jpeg',
+  },
+  {
+    id: 3,
+    name: 'Emperor Bed',
+    price: 239.99,
+    description:
+      'Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge',
+    Available: 'Out Of Stock',
+    Brand: 'Ikea',
+    img: './images/img3.jpeg',
+  },
+];
