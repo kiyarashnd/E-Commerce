@@ -170,7 +170,7 @@ nav {
 .links a:hover {
   background: var(--clr-primary-8);
   color: #c5a491;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   padding-left: 1.5rem;
 }
 .social-icons {
@@ -184,7 +184,16 @@ nav {
 .show-container {
   height: 10rem;
 }
+
+.Cart-login{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
 @media screen and (min-width: 950px) {
+  .Cart-login{
+display: none;
+  }
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
@@ -211,6 +220,7 @@ nav {
   .links a:hover {
     padding: 0;
     background: transparent;
+  transform: scale(1.1);
   }
   .social-icons {
     display: flex;
@@ -223,11 +233,6 @@ nav {
   .social-icons a:hover {
     color: var(--clr-primary-7);
   }
-}
-
-.myLink {
-  padding: 10px;
-  display: flex;
 }
 
 .numberOfTour {
@@ -251,4 +256,10 @@ nav {
   color: #102a42;
   font-size: 1.5rem;
   margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.myLink {
+  padding: 10px;
+  display: flex;
 }

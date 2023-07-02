@@ -28,7 +28,7 @@ const Navbar = () => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     console.log(linksHeight);
     if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`;
+      linksContainerRef.current.style.height = `${linksHeight - 2}px`;
     } else {
       linksContainerRef.current.style.height = '0px';
     }
@@ -38,7 +38,6 @@ const Navbar = () => {
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
-          {/* <img src={logo} alt='logo' /> */}
           <h2>E-commerce</h2>
           <button
             className='nav-toggle'
@@ -47,30 +46,27 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        {/* {showLinks && ( */}
         <div className='links-container' ref={linksContainerRef}>
           <ul className='links' ref={linksRef}>
-            {/* {links.map((link) => {
-              const { id, url, text } = link;
-              return ( */}
-            {/* <a href={url}>{text}</a> */}
             <Link to='/'>Home</Link>
             <Link to='/About'>About</Link>
             <Link to='/Products'>Products</Link>
-            {/* );
-            })} */}
+            <div className='Cart-login'>
+              <Link to='/Cart' className='myLink' title='shopping-cart'>
+                <p className='text'>Cart</p>
+                {!showLinks && <FaShoppingCart className='mySvg' />}
+                {!showLinks && (
+                  <span className='numberOfTour'>{cartTours}</span>
+                )}
+              </Link>
+              <Link to='/Login' className='myLink' title='Login'>
+                <p className='text'>Login</p>
+                {!showLinks && <AiOutlineLogin className='mySvg' />}
+              </Link>
+            </div>
           </ul>
         </div>
-        {/* )} */}
         <ul className='social-icons'>
-          {/* {social.map((socialIcon) => {
-            const { id, url, icon } = socialIcon;
-            return (
-              <li key={id}>
-                <a href={url}>{icon}</a>
-              </li>
-            );
-          })} */}
           <Link to='/Cart' className='myLink' title='shopping-cart'>
             <p className='text'>Cart</p>
             <FaShoppingCart className='mySvg' />
