@@ -51,6 +51,25 @@ export const social = [
   },
 ];
 
+export const category = [
+  {
+    id: 1,
+    name: 'Office',
+  },
+  {
+    id: 2,
+    name: 'Bedroom',
+  },
+  {
+    id: 3,
+    name: 'Living Room',
+  },
+  {
+    id: 4,
+    name: 'Modern Bookshelf',
+  },
+];
+
 export const products = [
   {
     id: 1,
@@ -61,6 +80,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Marcos',
     img: './images/img1.jpeg',
+    category: 2,
   },
   {
     id: 2,
@@ -71,6 +91,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Caressa',
     img: './images/img2.jpeg',
+    category: 1,
   },
   {
     id: 3,
@@ -81,6 +102,7 @@ export const products = [
     Available: 'Out Of Stock',
     Brand: 'Ikea',
     img: './images/img3.jpeg',
+    category: 2,
   },
   {
     id: 4,
@@ -91,6 +113,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Liddy',
     img: './images/img4.jpeg',
+    category: 3,
   },
   {
     id: 5,
@@ -101,6 +124,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Caressa',
     img: './images/img5.jpeg',
+    category: 2,
   },
   {
     id: 6,
@@ -111,6 +135,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Marcos',
     img: './images/img6.jpeg',
+    category: 1,
   },
   {
     id: 7,
@@ -121,6 +146,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Ikea',
     img: './images/img7.jpeg',
+    category: 3,
   },
   {
     id: 8,
@@ -131,6 +157,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Caressa',
     img: './images/img8.jpeg',
+    category: 4,
   },
   {
     id: 9,
@@ -141,6 +168,7 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Ikea',
     img: './images/img9.jpeg',
+    category: 1,
   },
   {
     id: 10,
@@ -151,5 +179,6 @@ export const products = [
     Available: 'In Stock',
     Brand: 'Ikea',
     img: './images/img10.jpeg',
+    category: 1,
   },
 ];

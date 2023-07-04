@@ -27,7 +27,7 @@ const Products = () => {
   return (
     <>
       <BreadCrumbs />
-      <p>{`${data.length} item found`}</p>
+      <p>{`${data.length} item${data.length > 0 ? 's' : ''} found`}</p>
       <section className={myStyles.container}>
         <form onSubmit={handelSubmit}>
           <aside className={myStyles.sidebar}>
