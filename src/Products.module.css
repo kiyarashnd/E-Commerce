@@ -31,7 +31,7 @@
 .sidebar{
     position: sticky;
     top: 1rem;
-    left: 0;
+    /* left: 0; */
 }
 
 .container{
@@ -42,4 +42,71 @@
     grid-template-columns: 200px 1fr;
 
     width: 95vw;
+}
+
+.inputText{
+    padding: 0.5rem;
+    background: #fff;
+    border: 0.25rem;
+    border-color: transparent;
+    letter-spacing: 0.1rem;
+}
+
+.btn{
+    margin-top: 0.1rem;
+    display: block;
+    margin: 0.25em 0px;
+    padding: 0.25rem 0px;
+    text-transform: capitalize;
+    background: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 0.1rem;
+    color: #617d98;
+    cursor: pointer;
+}
+
+btn.active{
+    border-color: #617d98;
+    opacity: 1;
+}
+
+.form-control{
+    margin-top: 2rem;
+}
+
+.head5{
+    font-size: 1rem;
+}
+
+.comp{
+    background:  #fff;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    padding: 0.25rem;
+
+    margin-top: 0.5rem;
+}
+
+.clearBtn{
+
+    display: block;
+    margin: 0.25em 0px;
+    text-transform: capitalize;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+
+    background: #bb2525;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: block;
 }
