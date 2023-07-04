@@ -22,7 +22,6 @@ const Pro = () => {
     if (count > 1) setCount((num) => num - 1);
   }
 
-  console.log(count);
   return (
     <>
       <section className={style['main-class']}>

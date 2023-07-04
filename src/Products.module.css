@@ -1,0 +1,45 @@
+.name{
+    color: #102a42;
+    font-size: 1rem;
+}
+
+.price{
+    color:  #ab7a5f;
+    letter-spacing: var(--spacing);
+}
+
+.myImage{
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    /* transition: var(--transition); */
+    height: 175px;
+    object-fit: cover;
+}
+.inner-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem 1.5rem;
+}
+
+.sidebar{
+    position: sticky;
+    top: 1rem;
+    left: 0;
+}
+
+.container{
+    display: grid;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+
+    grid-template-columns: 200px 1fr;
+
+    width: 95vw;
+}

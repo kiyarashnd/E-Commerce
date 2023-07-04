@@ -47,6 +47,10 @@
 .myImg:nth-child(1) {
 transform: translate(-50%,-40px);
    }
+
+   .main-container{
+    min-height: 40vh; 
+}
 }
 
 @media screen and (max-width: 950px) {

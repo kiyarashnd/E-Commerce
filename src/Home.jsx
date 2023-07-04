@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { products } from './data';
 
 const Home = () => {
+  /*
+  const url = 'http://localhost:5005/api/v1/resources/books/all';
+  fetch(url)
+    .then((res) => res.json())
+    .then((resp) => console.log(resp));
+*/
+
   return (
     <>
       <section className={myStyles['main-container']}>
