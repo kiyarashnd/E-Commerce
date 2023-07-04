@@ -20,6 +20,10 @@ const Products = () => {
   function handelSubmit(eve) {
     eve.preventDefault();
   }
+
+  const changeRange = (event) => {
+    setVal(event.target.value);
+  };
   return (
     <>
       <BreadCrumbs />
@@ -75,7 +79,8 @@ const Products = () => {
                 min='0'
                 max='9999999999'
                 step='1'
-                // onchange={setVal(this.value)}
+                value={val}
+                onInput={changeRange}
               ></input>
               <output>{val}</output>
             </div>
