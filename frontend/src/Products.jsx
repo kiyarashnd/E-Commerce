@@ -1,12 +1,20 @@
 import BreadCrumbs from './components/BasicBreadcrumbs';
-import { products } from './data';
+import { products, category } from './data';
 import { Link } from 'react-router-dom';
 import myStyles from './Products.module.css';
 import { useState } from 'react';
 
+const company = ['all', ...new Set(products.map((item) => item.Brand))];
+let sortPrice = [...products.map((item) => item.price)];
+sortPrice = sortPrice.sort((a, b) => a - b);
+
 const Products = () => {
   let data = products;
-  const [val, setVal] = useState(10);
+  // console.log(data);
+  // console.log(company);
+  // console.log('category is : ', category);
+  // console.log('sorted price is : ', sortPrice);
+  const [val, setVal] = useState(sortPrice[sortPrice.length - 1]);
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -27,7 +35,6 @@ const Products = () => {
   return (
     <>
       <BreadCrumbs />
-      <p>{`${data.length} item${data.length > 0 ? 's' : ''} found`}</p>
       <section className={myStyles.container}>
         <form onSubmit={handelSubmit}>
           <aside className={myStyles.sidebar}>
@@ -43,23 +50,37 @@ const Products = () => {
             <div className={myStyles['form-control']}>
               <h5 className={myStyles.head5}>Category</h5>
               <div>
-                <button className={myStyles.btn}>All</button>
+                {category.map((cat, index) => {
+                  return (
+                    <button key={index} className={myStyles.btn}>
+                      {cat.name}
+                    </button>
+                  );
+                })}
+                {/* <button className={myStyles.btn}>All</button>
                 <button className={myStyles.btn}>Office</button>
                 <button className={myStyles.btn}>Living Room</button>
                 <button className={myStyles.btn}>Kitchen</button>
                 <button className={myStyles.btn}>Bedroom</button>
                 <button className={myStyles.btn}>Dining</button>
-                <button className={myStyles.btn}>Kids</button>
+                <button className={myStyles.btn}>Kids</button> */}
               </div>
             </div>
             <div className={myStyles['form-control']}>
               <h5 className={myStyles.head5}>Company</h5>
               <select name='comp' id='company' className={myStyles.comp}>
-                <option value='all'>all</option>
+                {company.map((comp, index) => {
+                  return (
+                    <option key={index} value={{ comp }}>
+                      {comp}
+                    </option>
+                  );
+                })}
+                {/* <option value='all'>all</option>
                 <option value='marcos'>marcos</option>
                 <option value='liddy'>liddy</option>
                 <option value='ikea'>ikea</option>
-                <option value='caressa'>caressa</option>
+                <option value='caressa'>caressa</option> */}
               </select>
             </div>
 
@@ -76,8 +97,8 @@ const Products = () => {
               <input
                 // value={val}
                 type='range'
-                min='0'
-                max='9999999999'
+                min={sortPrice[0]}
+                max={sortPrice[sortPrice.length - 1]}
                 step='1'
                 value={val}
                 onInput={changeRange}
@@ -90,27 +111,35 @@ const Products = () => {
           </aside>
         </form>
         <div>
-          <header>header</header>
+          <header>
+            <p>{`${data.length} item${data.length > 1 ? 's' : ''} found`}</p>
+          </header>
           <main className={myStyles.productsContainer}>
-            {data.map((item) => {
-              return (
-                <Link
-                  to={`/Products/${item.id}`}
-                  className={myStyles.product3}
-                  key={item.id}
-                >
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    className={myStyles.myImage}
-                  />
-                  <div className={myStyles['inner-flex']}>
-                    <h5 className={myStyles.name}>{item.name}</h5>
-                    <p className={myStyles.price}>${item.price}</p>
-                  </div>
-                </Link>
-              );
-            })}
+            {data.length === 0 ? (
+              <h5 className={myStyles.notFound}>
+                Sorry, no products matched your search.
+              </h5>
+            ) : (
+              data.map((item) => {
+                return (
+                  <Link
+                    to={`/Products/${item.id}`}
+                    className={myStyles.product3}
+                    key={item.id}
+                  >
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className={myStyles.myImage}
+                    />
+                    <div className={myStyles['inner-flex']}>
+                      <h5 className={myStyles.name}>{item.name}</h5>
+                      <p className={myStyles.price}>${item.price}</p>
+                    </div>
+                  </Link>
+                );
+              })
+            )}
           </main>
         </div>
       </section>

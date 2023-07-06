@@ -110,3 +110,13 @@ btn.active{
     border-radius: 0.25rem;
     display: block;
 }
+
+.notFound{
+    font-size: 1.8rem;
+    text-transform: none;
+}
+
+@media screen and (max-width: 950px) {
+    .productsContainer{
+    grid-template-columns: repeat(2, 1fr);}
+}
