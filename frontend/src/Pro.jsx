@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import BreadCrumbs from './components/BasicBreadcrumbs';
 
 const Pro = () => {
   const [count, setCount] = useState(1);
@@ -24,6 +25,7 @@ const Pro = () => {
 
   return (
     <>
+      <BreadCrumbs title={id} />
       <section className={style['main-class']}>
         <div className={style.pic}>
           <img

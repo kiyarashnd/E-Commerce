@@ -59,7 +59,7 @@ const Products = () => {
 
   return (
     <>
-      <BreadCrumbs />
+      <BreadCrumbs title={'Products'} />
       <section className={myStyles.container}>
         <form onSubmit={handelSubmit}>
           <aside className={myStyles.sidebar}>

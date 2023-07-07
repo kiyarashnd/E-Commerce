@@ -4,7 +4,7 @@ import styles from './About.module.css';
 const About = () => {
   return (
     <>
-      <BreadCrumbs />
+      <BreadCrumbs title={'About'} />
       <section className={styles.container}>
         <img src='about.jpeg' alt='table' className={styles.left} />
 
