@@ -7,23 +7,28 @@ import { useState } from 'react';
 const company = ['all', ...new Set(products.map((item) => item.Brand))];
 let sortPrice = [...products.map((item) => item.price)];
 sortPrice = sortPrice.sort((a, b) => a - b);
+const categories = ['all', ...category.map((cat) => cat.name)];
 
 const Products = () => {
-  let data = products;
+  // let data = products;
+  const [data, setData] = useState(products);
+  // console.log('data is : ', data);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
   // console.log(data);
   // console.log(company);
   // console.log('category is : ', category);
   // console.log('sorted price is : ', sortPrice);
   const [val, setVal] = useState(sortPrice[sortPrice.length - 1]);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-  data = data.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+  // data = data.filter((product) =>
+  //   product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   function handelSubmit(eve) {
     eve.preventDefault();
@@ -32,6 +37,26 @@ const Products = () => {
   const changeRange = (event) => {
     setVal(event.target.value);
   };
+
+  const filterItems = (category, type) => {
+    if (type === 'category') setSelectedCategory(category);
+    if (category === 'all') {
+      setData(products);
+      return;
+    }
+    const newItems = data.filter((item) => item[type] === category);
+    setData(newItems);
+  };
+
+  // const filterComp = (comp) => {
+  //   if (comp === 'all') {
+  //     setData(products);
+  //     return;
+  //   }
+  //   const newItems = products.filter((item) => item.Brand === comp);
+  //   setData(newItems);
+  // };
+
   return (
     <>
       <BreadCrumbs />
@@ -39,48 +64,48 @@ const Products = () => {
         <form onSubmit={handelSubmit}>
           <aside className={myStyles.sidebar}>
             <div>
-              <input
+              {/* <input
                 type='text'
                 placeholder='search'
                 value={searchTerm}
                 onChange={handleChange}
                 className={myStyles.inputText}
-              />
+              /> */}
             </div>
             <div className={myStyles['form-control']}>
               <h5 className={myStyles.head5}>Category</h5>
               <div>
-                {category.map((cat, index) => {
+                {categories.map((cat, index) => {
                   return (
-                    <button key={index} className={myStyles.btn}>
-                      {cat.name}
+                    <button
+                      key={index}
+                      className={`${myStyles.btn} ${
+                        cat === selectedCategory ? myStyles.active : undefined
+                      }`}
+                      onClick={() => filterItems(cat, 'category')}
+                    >
+                      {cat}
                     </button>
                   );
                 })}
-                {/* <button className={myStyles.btn}>All</button>
-                <button className={myStyles.btn}>Office</button>
-                <button className={myStyles.btn}>Living Room</button>
-                <button className={myStyles.btn}>Kitchen</button>
-                <button className={myStyles.btn}>Bedroom</button>
-                <button className={myStyles.btn}>Dining</button>
-                <button className={myStyles.btn}>Kids</button> */}
               </div>
             </div>
+
             <div className={myStyles['form-control']}>
               <h5 className={myStyles.head5}>Company</h5>
-              <select name='comp' id='company' className={myStyles.comp}>
+              <select
+                name='comp'
+                id='company'
+                className={myStyles.comp}
+                onChange={(e) => filterItems(e.target.value, 'Brand')}
+              >
                 {company.map((comp, index) => {
                   return (
-                    <option key={index} value={{ comp }}>
+                    <option key={index} value={comp}>
                       {comp}
                     </option>
                   );
                 })}
-                {/* <option value='all'>all</option>
-                <option value='marcos'>marcos</option>
-                <option value='liddy'>liddy</option>
-                <option value='ikea'>ikea</option>
-                <option value='caressa'>caressa</option> */}
               </select>
             </div>
 
