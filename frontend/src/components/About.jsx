@@ -1,5 +1,6 @@
 import BreadCrumbs from './BasicBreadcrumbs';
 import styles from './About.module.css';
+import Footer from '../Footer';
 
 const About = () => {
   return (
@@ -25,11 +26,7 @@ const About = () => {
           </p>
         </article>
       </section>
-      <footer className={styles.footer}>
-        <p className={styles.footerPara}>
-          © 2023 <span>kiyarash Nadri</span> All rights reserved
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 };

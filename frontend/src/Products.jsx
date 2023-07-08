@@ -3,6 +3,7 @@ import { products, category } from './data';
 import { Link } from 'react-router-dom';
 import myStyles from './Products.module.css';
 import { useState } from 'react';
+import Footer from './Footer';
 
 const company = ['all', ...new Set(products.map((item) => item.Brand))];
 let sortPrice = [...products.map((item) => item.price)];
@@ -168,6 +169,7 @@ const Products = () => {
           </main>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

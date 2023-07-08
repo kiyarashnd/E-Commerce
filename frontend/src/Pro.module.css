@@ -105,5 +105,6 @@
     .myImg{
         width: 90%;
         justify-content: center;
+        margin-top: 2rem;
     }
 }

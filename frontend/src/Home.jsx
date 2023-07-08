@@ -1,6 +1,9 @@
 import myStyles from './Home.module.css';
 import { Link } from 'react-router-dom';
 import { products } from './data';
+import Services from './Services';
+import Footer from './Footer';
+import Join from './Join';
 
 const Home = () => {
   /*
@@ -83,6 +86,9 @@ const Home = () => {
           ALL PRODUCTS
         </Link>
       </section>
+      <Services />
+      <Join />
+      <Footer />
     </>
   );
 };
