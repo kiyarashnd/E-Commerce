@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import myStyles from './Products.module.css';
 import { useState } from 'react';
 import Footer from './Footer';
+import Header from './Header';
 
 const company = ['all', ...new Set(products.map((item) => item.Brand))];
 let sortPrice = [...products.map((item) => item.price)];
@@ -67,8 +68,9 @@ const Products = () => {
             <div>
               {/* <input
                 type='text'
+                name='text'
                 placeholder='search'
-                value={searchTerm}
+                value={text}
                 onChange={handleChange}
                 className={myStyles.inputText}
               /> */}
@@ -137,9 +139,7 @@ const Products = () => {
           </aside>
         </form>
         <div>
-          <header>
-            <p>{`${data.length} item${data.length > 1 ? 's' : ''} found`}</p>
-          </header>
+          <Header length={data.length} />
           <main className={myStyles.productsContainer}>
             {data.length === 0 ? (
               <h5 className={myStyles.notFound}>
