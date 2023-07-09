@@ -1,14 +1,29 @@
 import style from './Header.module.css';
 import { TfiLayoutGrid2, TfiLayoutListThumb } from 'react-icons/tfi';
+import { useGlobalContext } from './context';
 
 const Header = ({ length }) => {
+  const { isGridEnable, openGrid, closeGrid } = useGlobalContext();
+
+  function handleGrid() {
+    openGrid();
+  }
+  function handleRow() {
+    closeGrid();
+  }
   return (
     <section className={style.container}>
       <div className={style['btn-container']}>
-        <button className={style.btn}>
+        <button
+          className={`${style.btn} ${isGridEnable ? style.active : null}`}
+          onClick={handleGrid}
+        >
           <TfiLayoutGrid2 className={style.icon} />
         </button>
-        <button className={style.btn}>
+        <button
+          className={`${style.btn} ${isGridEnable ? null : style.active}`}
+          onClick={handleRow}
+        >
           <TfiLayoutListThumb className={style.icon} />
         </button>
       </div>

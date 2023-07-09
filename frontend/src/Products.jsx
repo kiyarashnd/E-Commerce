@@ -5,6 +5,7 @@ import myStyles from './Products.module.css';
 import { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import { useGlobalContext } from './context';
 
 const company = ['all', ...new Set(products.map((item) => item.Brand))];
 let sortPrice = [...products.map((item) => item.price)];
@@ -12,6 +13,8 @@ sortPrice = sortPrice.sort((a, b) => a - b);
 const categories = ['all', ...category.map((cat) => cat.name)];
 
 const Products = () => {
+  const { isGridEnable, openGrid, closeGrid } = useGlobalContext();
+
   // let data = products;
   const [data, setData] = useState(products);
   // console.log('data is : ', data);
@@ -140,33 +143,71 @@ const Products = () => {
         </form>
         <div>
           <Header length={data.length} />
-          <main className={myStyles.productsContainer}>
-            {data.length === 0 ? (
-              <h5 className={myStyles.notFound}>
-                Sorry, no products matched your search.
-              </h5>
-            ) : (
-              data.map((item) => {
-                return (
-                  <Link
-                    to={`/Products/${item.id}`}
-                    className={myStyles.product3}
-                    key={item.id}
-                  >
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className={myStyles.myImage}
-                    />
-                    <div className={myStyles['inner-flex']}>
-                      <h5 className={myStyles.name}>{item.name}</h5>
-                      <p className={myStyles.price}>${item.price}</p>
-                    </div>
-                  </Link>
-                );
-              })
-            )}
-          </main>
+          {isGridEnable ? (
+            <main className={myStyles.productsContainer}>
+              {data.length === 0 ? (
+                <h5 className={myStyles.notFound}>
+                  Sorry, no products matched your search.
+                </h5>
+              ) : (
+                data.map((item) => {
+                  return (
+                    <Link
+                      to={`/Products/${item.id}`}
+                      className={myStyles.product3}
+                      key={item.id}
+                    >
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className={myStyles.myImage}
+                      />
+                      <div className={myStyles['inner-flex']}>
+                        <h5 className={myStyles.name}>{item.name}</h5>
+                        <p className={myStyles.price}>${item.price}</p>
+                      </div>
+                    </Link>
+                  );
+                })
+              )}
+            </main>
+          ) : (
+            <section className={myStyles.rowProductsContainer}>
+              {data.length === 0 ? (
+                <h5 className={myStyles.notFound}>
+                  Sorry, no products matched your search.
+                </h5>
+              ) : (
+                data.map((item) => {
+                  return (
+                    <article className={myStyles.showFlex} key={item.id}>
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className={myStyles.imgFlex}
+                      />
+                      <div className={myStyles.details}>
+                        <h5 className={myStyles.nameFlex}>{item.name}</h5>
+                        <h4 className={myStyles.price}>${item.price}</h4>
+                        <p
+                          className={myStyles.desc}
+                        >{`${item.description.substring(
+                          0,
+                          item.description.length / 2
+                        )}...`}</p>
+                        <Link
+                          to={`/Products/${item.id}`}
+                          className={myStyles.detail}
+                        >
+                          details
+                        </Link>
+                      </div>
+                    </article>
+                  );
+                })
+              )}
+            </section>
+          )}
         </div>
       </section>
       <Footer />
