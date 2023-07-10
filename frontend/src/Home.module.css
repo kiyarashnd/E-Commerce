@@ -3,6 +3,7 @@
     gap: 5rem;
 
     min-height: 60vh; 
+    padding-bottom: 4rem;
 }
 
 .first-container{
@@ -98,7 +99,7 @@ display: none;
 .heading2{
     line-height: 1;
     font-size: 3rem;
-   }
+}
 
 .para2{
     font-size: 1.5rem;
@@ -118,7 +119,6 @@ display: none;
 
 .slider-container h2{
     text-align: center;
-    margin-top: 1.5rem;
     padding-top: 2rem;
 }
 
