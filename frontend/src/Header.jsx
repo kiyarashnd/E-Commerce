@@ -2,7 +2,7 @@ import style from './Header.module.css';
 import { TfiLayoutGrid2, TfiLayoutListThumb } from 'react-icons/tfi';
 import { useGlobalContext } from './context';
 
-const Header = ({ length }) => {
+const Header = ({ length, sortData }) => {
   const { isGridEnable, openGrid, closeGrid } = useGlobalContext();
 
   function handleGrid() {
@@ -11,6 +11,7 @@ const Header = ({ length }) => {
   function handleRow() {
     closeGrid();
   }
+
   return (
     <section className={style.container}>
       <div className={style['btn-container']}>
@@ -34,10 +35,17 @@ const Header = ({ length }) => {
       {/* <div className={style.underline}></div> */}
 
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor='sort'>sort by</label>
-        <select name='sort' id='sort' className={style['sort-input']}>
-          <option value='price-lowest'>price (lowest)</option>
-          <option value='price-highest'>price (highest)</option>
+        <label htmlFor='sort' className={style.label}>
+          sort by
+        </label>
+        <select
+          name='sort'
+          id='sort'
+          className={style['sort-input']}
+          onChange={(e) => sortData(e.target.value)}
+        >
+          <option value='lowest'>price (lowest)</option>
+          <option value='highest'>price (highest)</option>
         </select>
       </form>
     </section>

@@ -71,4 +71,12 @@
         grid-template-columns: auto auto auto;
         column-gap: 2rem;
     }
+    .label{
+    margin-left: 0.7rem;
+    }
 }
+
+.label{
+    margin-right: 0.8rem;
+    }
+

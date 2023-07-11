@@ -13,18 +13,73 @@ sortPrice = sortPrice.sort((a, b) => a - b);
 const categories = ['all', ...category.map((cat) => cat.name)];
 
 const Products = () => {
-  const { isGridEnable, openGrid, closeGrid } = useGlobalContext();
-
-  // let data = products;
   const [data, setData] = useState(products);
-  // console.log('data is : ', data);
-  const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // console.log(data);
-  // console.log(company);
-  // console.log('category is : ', category);
-  // console.log('sorted price is : ', sortPrice);
+  let myProducts = [...products];
+
+  let sort = function (prop, arr) {
+    prop = prop.split('.');
+    let len = prop.length;
+
+    arr.sort(function (a, b) {
+      let i = 0;
+      while (i < len) {
+        a = a[prop[i]];
+        b = b[prop[i]];
+        i++;
+      }
+      if (a < b) {
+        return -1;
+      } else if (a > b) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return arr;
+  };
+
+  let reversSort = function (prop, arr) {
+    prop = prop.split('.');
+    let len = prop.length;
+
+    arr.sort(function (a, b) {
+      let i = 0;
+      while (i < len) {
+        a = a[prop[i]];
+        b = b[prop[i]];
+        i++;
+      }
+      if (a > b) {
+        return -1;
+      } else if (a < b) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return arr;
+  };
+
+  const { isGridEnable } = useGlobalContext();
+
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [val, setVal] = useState(sortPrice[sortPrice.length - 1]);
+
+  const sortData = (sortValue) => {
+    console.log('value is : ', sortValue);
+    if (sortValue === 'lowest') {
+      const soretedProduts = sort('price', myProducts);
+      myProducts = soretedProduts;
+      setData(myProducts);
+    }
+
+    if (sortValue === 'highest') {
+      const reverseSoretedProduts = reversSort('price', myProducts);
+      myProducts = reverseSoretedProduts;
+      setData(myProducts);
+    }
+  };
 
   // const [searchTerm, setSearchTerm] = useState('');
 
@@ -46,7 +101,7 @@ const Products = () => {
   const filterItems = (category, type) => {
     if (type === 'category') setSelectedCategory(category);
     if (category === 'all') {
-      setData(products);
+      setData(myProducts);
       return;
     }
     const newItems = data.filter((item) => item[type] === category);
@@ -142,7 +197,7 @@ const Products = () => {
           </aside>
         </form>
         <div>
-          <Header length={data.length} />
+          <Header length={data.length} sortData={sortData} />
           {isGridEnable ? (
             <main className={myStyles.productsContainer}>
               {data.length === 0 ? (

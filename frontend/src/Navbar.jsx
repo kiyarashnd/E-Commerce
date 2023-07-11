@@ -13,20 +13,20 @@ const Navbar = () => {
   const [cartTours, setCartTours] = useState(0);
 
   let count = useRef(0); //this line is read just in initial render
-  console.log(count);
+  // console.log(count);
 
   count.current = count.current + 1;
-  console.log('new count : ', count.current); //on every re render this gonna change
+  // console.log('new count : ', count.current); //on every re render this gonna change
 
   let countVariable = 0;
-  console.log(countVariable);
+  // console.log(countVariable);
 
   countVariable = countVariable + 1;
-  console.log('new count variable : ', countVariable); //in every re render this not change and is still 1
+  // console.log('new count variable : ', countVariable); //in every re render this not change and is still 1
 
   useEffect(() => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
-    console.log(linksHeight);
+    // console.log(linksHeight);
     if (showLinks) {
       linksContainerRef.current.style.height = `${linksHeight - 2}px`;
     } else {
