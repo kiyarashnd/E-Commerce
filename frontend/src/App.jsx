@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Home from './Home';
-import About from './components/About';
-import Products from './Products';
-import NotFound from './NotFound';
-import Cart from './Cart';
-import Login from './Login';
-import Pro from './Pro';
+import Navbar from './components/Navbar';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
+import Products from './pages/products/Products';
+import NotFound from './utils/NotFound';
+import Cart from './pages/cart/Cart';
+import Login from './pages/login/Login';
+import Pro from './pages/singleProduc/Pro';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

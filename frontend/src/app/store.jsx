@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import enableSlice from '../enableSlice';
+import enableSlice from '../pages/products/enableSlice';
 
 export const store = configureStore({
   reducer: {

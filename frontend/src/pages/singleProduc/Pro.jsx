@@ -1,12 +1,12 @@
 import { useHistory, useParams } from 'react-router-dom';
-import { products } from './data';
+import { products } from '../../data/data';
 import style from './Pro.module.css';
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import BreadCrumbs from './components/BasicBreadcrumbs';
+import BreadCrumbs from '../../components/BasicBreadcrumbs';
 
 const Pro = () => {
   const [count, setCount] = useState(1);

@@ -1,8 +1,8 @@
 import myStyles from './Home.module.css';
 import { Link } from 'react-router-dom';
-import { products } from './data';
+import { products } from '../../data/data';
 import Services from './Services';
-import Footer from './Footer';
+import Footer from '../../components/Footer';
 import Join from './Join';
 
 const Home = () => {
@@ -29,9 +29,17 @@ const Home = () => {
           </Link>
         </div>
         <div className={myStyles.container2}>
-          <img className={myStyles.myImg} src='img2.jpeg' alt='Image 2' />
+          <img
+            className={myStyles.myImg}
+            src='../src/assets/img2.jpeg'
+            alt='Image 2'
+          />
           {/* <img src='image3.jpg' alt='Image 3' /> */}
-          <img className={myStyles.myImg} src='img1.jpeg' alt='Image 1' />
+          <img
+            className={myStyles.myImg}
+            src='../src/assets/img1.jpeg'
+            alt='Image 1'
+          />
         </div>
       </section>
       <section className={myStyles['slider-container']}>

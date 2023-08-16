@@ -1,9 +1,9 @@
-import BreadCrumbs from './components/BasicBreadcrumbs';
-import { products, category } from './data';
+import BreadCrumbs from '../../components/BasicBreadcrumbs';
+import { products, category } from '../../data/data';
 import { Link } from 'react-router-dom';
 import myStyles from './Products.module.css';
 import { useState } from 'react';
-import Footer from './Footer';
+import Footer from '../../components/Footer';
 import Header from './Header';
 // import { useGlobalContext } from './context';
 

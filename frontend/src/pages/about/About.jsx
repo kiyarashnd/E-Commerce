@@ -1,13 +1,13 @@
-import BreadCrumbs from './BasicBreadcrumbs';
+import BreadCrumbs from '../../components/BasicBreadcrumbs';
 import styles from './About.module.css';
-import Footer from '../Footer';
+import Footer from '../../components/Footer';
 
 const About = () => {
   return (
     <>
       <BreadCrumbs title={'About'} />
       <section className={styles.container}>
-        <img src='about.jpeg' alt='table' className={styles.left} />
+        <img src='src/assets/about.jpeg' alt='table' className={styles.left} />
 
         <article className={styles.right}>
           <h3 className={styles.header}>Our Story</h3>

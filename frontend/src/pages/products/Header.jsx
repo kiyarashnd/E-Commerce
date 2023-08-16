@@ -2,8 +2,7 @@ import style from './Header.module.css';
 import { TfiLayoutGrid2, TfiLayoutListThumb } from 'react-icons/tfi';
 // import { useGlobalContext } from './context';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllEnable } from './enableSlice';
-import { closeGrid, openGrid } from './enableSlice';
+import { selectAllEnable, chnageStatus } from './enableSlice';
 
 const Header = ({ length, sortData }) => {
   const dispatch = useDispatch();
@@ -13,11 +12,13 @@ const Header = ({ length, sortData }) => {
 
   function handleGrid() {
     // openGrid();
-    dispatch(openGrid({ status: true }));
+    // dispatch(openGrid({ status: true }));
+    dispatch(chnageStatus());
   }
   function handleRow() {
     // closeGrid();
-    dispatch(closeGrid({ status: false }));
+    // dispatch(closeGrid({ status: false }));
+    dispatch(chnageStatus());
   }
 
   return (

@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import styles from './BasicBreadcrumbs.module.css';
-import { products } from './../data';
+import { products } from '../data/data';
 
 import { useState } from 'react';
 
