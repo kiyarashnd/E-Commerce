@@ -185,14 +185,14 @@ nav {
   height: 10rem;
 }
 
-.Cart-login{
+.Cart-login {
   display: flex;
   flex-direction: column;
   padding-bottom: 0;
 }
 @media screen and (min-width: 950px) {
-  .Cart-login{
-display: none;
+  .Cart-login {
+    display: none;
   }
   .nav-center {
     max-width: 1170px;
@@ -220,7 +220,7 @@ display: none;
   .links a:hover {
     padding: 0;
     background: transparent;
-  transform: scale(1.1);
+    transform: scale(1.1);
   }
   .social-icons {
     display: flex;
@@ -239,7 +239,7 @@ display: none;
   font-size: 0.9rem;
   color: white;
   border-radius: 40%;
-  background-color: #ab7a5f;;
+  background-color: #ab7a5f;
   width: 20px;
   height: 20px;
 
@@ -252,7 +252,7 @@ display: none;
   font-size: 2rem;
 }
 
-.text{
+.text {
   color: #102a42;
   font-size: 1.5rem;
   margin-right: 5px;

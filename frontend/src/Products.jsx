@@ -5,7 +5,10 @@ import myStyles from './Products.module.css';
 import { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import { useGlobalContext } from './context';
+// import { useGlobalContext } from './context';
+
+import { useSelector } from 'react-redux';
+import { selectAllEnable } from './enableSlice';
 
 const company = ['all', ...new Set(products.map((item) => item.Brand))];
 let sortPrice = [...products.map((item) => item.price)];
@@ -61,7 +64,8 @@ const Products = () => {
     return arr;
   };
 
-  const { isGridEnable } = useGlobalContext();
+  // const { isGridEnable } = useGlobalContext();
+  const { isGridEnable } = useSelector(selectAllEnable);
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [val, setVal] = useState(sortPrice[sortPrice.length - 1]);
