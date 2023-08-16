@@ -3,3 +3,4 @@ data folder that containers for any json data you have
 utils folder is the code i put in here is generally very small and simple funciton and generally we want them to be pure function
 components folder have some component like Button or CheckBox that gonna used in pages folder
 pages folder have some component to it that are shared and some components that are unique (chon maslan Join.jsx faghat toye Home component estefade mishe toye folder e home)
+https://www.youtube.com/watch?v=UUga4-z7b6s
